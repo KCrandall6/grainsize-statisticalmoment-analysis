@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
-const DataEntry = ({phiData, setPhiData, dataSubmit}) => {
+const DataEntry = ({phiData, phiSizes, setPhiData, dataSubmit, calculationsData, setCalculationsData}) => {
 
-  const phiSizes = [-2.5, -2.0, -1.5, -1, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0];
 
   const onFormChange = (e) => {
     let phi = e.target.name;
@@ -16,7 +15,9 @@ const DataEntry = ({phiData, setPhiData, dataSubmit}) => {
     }
     if (isNaN(phi)) {
       if (phi === 'pan') setPhiData({...phiData, 'pan': value});
-      if (phi === 'sample name') setPhiData({...phiData, 'sample name': value});
+      if (phi === 'sampleName') {
+        setCalculationsData({...calculationsData, 'sampleName': value})
+      }
     } else {
       phi = Number(e.target.name).toFixed(1);
       setPhiData({...phiData, [phi]: value});
@@ -28,7 +29,7 @@ const DataEntry = ({phiData, setPhiData, dataSubmit}) => {
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Sample Name</Form.Label>
-          <Form.Control name="sample name" onChange={onFormChange} type="email" placeholder="Sample Name" />
+          <Form.Control name="sampleName" onChange={onFormChange} type="email" placeholder="Sample Name" />
         </Form.Group>
       <p>Enter Weight by Seive Size (ϕ)</p>
         {phiSizes.map((size) => (
