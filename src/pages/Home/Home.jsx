@@ -27,7 +27,9 @@ function Home() {
     'totalWeight': 0,
     'weightInputsArr': [],
     'weightPercentArr': [],
-    'cumulativePercentArr': []
+    'cumulativePercentArr': [],
+    'phiSizes': [-2.5, -2.0, -1.5, -1, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 'pan'],
+    'placement': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
   })
 
   console.log('calculations data: ', calculationsData)

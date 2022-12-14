@@ -5,7 +5,6 @@ import WeightAndCumul from './WeightAndCumul';
 
 const Report = ({calculationsData}) => {
 
-// console.log('in the report', calculationsData)
 
   return(
     <div>
@@ -17,8 +16,7 @@ const Report = ({calculationsData}) => {
       <div id='data-holder' className='d-flex flex-row p-2 border'>
         <div id='distributions' className='p-2 border'>
           <p>weight and cumul %</p>
-          {calculationsData.totalWeight}
-          <WeightAndCumul/>
+          <WeightAndCumul calculationsData={calculationsData}/>
         </div>
         <div id='moments-and-graphs' className='d-flex flex-column p-2 border'>
           <div id='moments' className='p-2 border'>
