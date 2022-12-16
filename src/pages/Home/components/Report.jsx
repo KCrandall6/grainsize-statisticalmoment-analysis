@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import WeightAndCumul from './WeightAndCumul';
+import DistributionGraphs from './DistributionGraphs';
+import StatisticalMoments from './StatisticalMoments';
 
 
 const Report = ({calculationsData}) => {
@@ -9,21 +11,20 @@ const Report = ({calculationsData}) => {
   return(
     <div>
 
-    <div id='parent' className='d-flex flex-column p-2 border'>
+    <div id='parent' className='d-flex w-100 flex-column p-2 border'>
       <div id='name' className='text-center'>
-        <p>{calculationsData.sampleName}</p>
+        <h1>{calculationsData.sampleName}</h1>
       </div>
       <div id='data-holder' className='d-flex flex-row p-2 border'>
         <div id='distributions' className='p-2 border'>
-          <p>weight and cumul %</p>
           <WeightAndCumul calculationsData={calculationsData}/>
         </div>
         <div id='moments-and-graphs' className='d-flex flex-column p-2 border'>
           <div id='moments' className='p-2 border'>
-            <p>Statistical Moment</p>
+            <StatisticalMoments calculationsData={calculationsData}/>
           </div>
           <div id='graphs' className='p-2 border'>
-            <p>Distribution and Cumulative</p>
+            <DistributionGraphs calculationsData={calculationsData}/>
           </div>
         </div>
       </div>

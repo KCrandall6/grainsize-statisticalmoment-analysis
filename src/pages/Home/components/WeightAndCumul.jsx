@@ -20,7 +20,7 @@ const WeightAndCumul = ({calculationsData}) => {
           </thead>
           <tbody>
             {calculationsData.placement.map((el) => (
-              <tr>
+              <tr  key={el}>
                 <td>{isNaN(Number(calculationsData.phiSizes[el])) ? calculationsData.phiSizes[el] : Number(calculationsData.phiSizes[el]).toFixed(1)}</td>
                 <td>{isNaN(Number(calculationsData.weightPercentArr[el])) ? '-' : Number(calculationsData.weightPercentArr[el]).toFixed(1)}</td>
                 <td>{isNaN(Number(calculationsData.cumulativePercentArr[el])) ? '-' : Number(calculationsData.cumulativePercentArr[el]).toFixed(1)}</td>
