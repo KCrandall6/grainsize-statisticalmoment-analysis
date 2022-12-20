@@ -106,7 +106,7 @@ const DistributionGraphs = ({calculationsData}) => {
           font: {
               size: 15
           }
-        },
+        }
       },
       'x-axis-2': {
         title: {
@@ -114,8 +114,11 @@ const DistributionGraphs = ({calculationsData}) => {
           text: 'Particle Diameter (ϕ)',
           font: {
               size: 15
-          }
-        },
+          },
+          position: 'bottom',
+          align: 'center',
+          rotation: 0
+        }
       }
     },
     plugins: {
@@ -135,13 +138,13 @@ const DistributionGraphs = ({calculationsData}) => {
         <Bar
           className='border'
           data={barData}
-          style={{ width: "100%", height: "50%" }}
+          height={250}
           options={barDataOptions}
           />
         <Line
           className='border'
           data={lineData}
-          style={{ width: "100%", height: "50%" }}
+          height={250}
           options={lineDataOptions}
         />
     </div>
