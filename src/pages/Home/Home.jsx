@@ -85,8 +85,7 @@ function Home() {
   }
 
   return(
-    <div className='p-5'>
-      <p>This is home</p>
+    <div className='d-flex justify-content-center p-5'>
       <div className='d-flex justify-content-start'>
       <DataEntry phiData={phiData} phiSizes={phiSizes} setPhiData={setPhiData} calculationsData={calculationsData} setCalculationsData={setCalculationsData} dataSubmit={dataSubmit}/>
       <Report calculationsData={calculationsData}/>
