@@ -5,7 +5,7 @@ import DistributionGraphs from './DistributionGraphs';
 import StatisticalMoments from './StatisticalMoments';
 
 
-const Report = ({calculationsData}) => {
+const Report = ({calculationsData, moments}) => {
 
 
   return(
@@ -21,7 +21,7 @@ const Report = ({calculationsData}) => {
         </div>
         <div id='moments-and-graphs' className='d-flex flex-column p-2 border'>
           <div id='moments' className='p-2 border'>
-            <StatisticalMoments calculationsData={calculationsData}/>
+            <StatisticalMoments moments={moments}/>
           </div>
           <div id='graphs' className='p-2 border'>
             <DistributionGraphs calculationsData={calculationsData}/>
