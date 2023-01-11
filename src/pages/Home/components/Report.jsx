@@ -6,38 +6,40 @@ import StatisticalMoments from './StatisticalMoments';
 
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import Excel from 'exceljs';
+import FileSaver from 'file-saver';
+
 
 
 const Report = ({calculationsData}) => {
 
 
   const downloadPDF = () => {
-    // const scaleFactor = 0.75;
-    // html2canvas(document.querySelector("#div-to-download"), {
-    //   width: document.querySelector("#div-to-download").offsetWidth * scaleFactor,
-    //   height: document.querySelector("#div-to-download").offsetHeight * scaleFactor
-    // }).then(canvas => {
-    //   const pdf = new jsPDF();
-    //   var context = canvas.getContext('2d');
-    //   context.scale(scaleFactor, scaleFactor);
-    //   pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0);
-    // const scale = 0.25;
-    // const div = document.querySelector("#div-to-download");
-    // const canvas = document.createElement('canvas');
-    // canvas.width = div.offsetWidth*scale;
-    // canvas.height = div.offsetHeight*scale;
-    // const pdf = new jsPDF();
-    // html2canvas(div,{
-    //     canvas: canvas,
-    //     useCORS: true
-    // }).then(function(canvas) {
-    //     pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, canvas.width*scale, canvas.height*scale);
-    // const scale = 0.85;
     const div = document.querySelector("#div-to-download");
     const pdf = new jsPDF('p', 'in', 'letter');
     html2canvas(div).then(canvas => {
         pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0);
       pdf.save(`${calculationsData.sampleName}.pdf`);
+    });
+  };
+
+  const downloadXLSX = () => {
+    const tableTitle = [[`${calculationsData.sampleName}`]]
+    const table1Data = [['Phi Sizes'], calculationsData.phiSizes];
+    const table2Data = [['Weight Inputs'], calculationsData.weightInputsArr];
+    const table3Data = [['Weight Percent'], calculationsData.weightPercentArr];
+    const table4Data = [['Cumulative Percent'], calculationsData.cumulativePercentArr];
+
+    const workbook = new Excel.Workbook();
+    const sheet = workbook.addWorksheet("Data");
+    sheet.addRows(tableTitle);
+    sheet.addRows(table1Data);
+    sheet.addRows(table2Data);
+    sheet.addRows(table3Data);
+    sheet.addRows(table4Data);
+    workbook.xlsx.writeBuffer().then((data) => {
+        let blob = new Blob([data], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+        FileSaver.saveAs(blob, `${calculationsData.sampleName}.xlsx`);
     });
   }
 
@@ -64,7 +66,7 @@ const Report = ({calculationsData}) => {
       </div>
       <div className='d-flex justify-content-center p-4'>
         <Button className='m-2' onClick={() => downloadPDF()}>Download PDF</Button>
-        <Button className='m-2' onClick={() => console.log('data')}>Download Excel</Button>
+        <Button className='m-2' onClick={() => downloadXLSX()}>Download Excel</Button>
       </div>
     </div>
   )
