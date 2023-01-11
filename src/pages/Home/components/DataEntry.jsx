@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
-const DataEntry = ({phiData, phiSizes, setPhiData, dataSubmit, calculationsData, setCalculationsData}) => {
+const DataEntry = ({phiData, phiSizes, setPhiData, dataSubmit, resetData, calculationsData, setCalculationsData}) => {
 
 
   const onFormChange = (e) => {
@@ -25,7 +25,7 @@ const DataEntry = ({phiData, phiSizes, setPhiData, dataSubmit, calculationsData,
   }
 
   return(
-    <div className='d-flex inline-flex p-4' >
+    <div className='d-flex justify-content-center p-4' >
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Sample Name</Form.Label>
@@ -55,6 +55,11 @@ const DataEntry = ({phiData, phiSizes, setPhiData, dataSubmit, calculationsData,
       <Form.Group as={Row} className="mb-3">
         <Col >
           <Button onClick={() => dataSubmit()}>Generate Report</Button>
+        </Col>
+      </Form.Group>
+      <Form.Group as={Row} className="mb-3">
+        <Col >
+          <Button onClick={() => resetData()}>Reset Report</Button>
         </Col>
       </Form.Group>
     </Form>

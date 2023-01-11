@@ -141,6 +141,7 @@ const DistributionGraphs = ({calculationsData}) => {
           height={250}
           options={barDataOptions}
           />
+          <br/>
         <Line
           className='border'
           data={lineData}

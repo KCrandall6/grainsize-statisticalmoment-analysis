@@ -6,10 +6,10 @@ const WeightAndCumul = ({calculationsData}) => {
 
   return (
     <div className='text-center'>
-      <p>Total Sample Weight: {calculationsData.totalWeight}</p>
       <div className='d-flex flex-row '>
-        <div className='p-2 m-1 border'>
-          <p>Weight and Cumulative % Calculations</p>
+        <div className='p-2 m-1'>
+          <h5>Weight and Cumulative % Calculations</h5>
+          <p><em>Total Sample Weight: {calculationsData.totalWeight}</em></p>
           <Table striped bordered hover size="sm">
           <thead>
             <tr>
