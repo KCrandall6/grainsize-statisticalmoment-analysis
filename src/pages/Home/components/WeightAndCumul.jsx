@@ -5,7 +5,7 @@ const WeightAndCumul = ({calculationsData}) => {
 
 
   return (
-    <div className='text-center'>
+    <div className='text-center' style={{ maxWidth: '345px'}}>
       <div className='d-flex flex-row '>
         <div className='p-2 m-1'>
           <h5>Weight and Cumulative % Calculations</h5>

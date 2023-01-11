@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import DataEntry from './components/DataEntry';
 import Report from './components/Report';
 
@@ -31,7 +30,6 @@ function Home() {
     'phiSizes': [-2.5, -2.0, -1.5, -1, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 'pan'],
     'placement': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
   })
-
 
   const phiSizes = [-2.5, -2.0, -1.5, -1, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0];
 
@@ -96,8 +94,8 @@ function Home() {
   return(
     <div className='d-flex justify-content-center p-5'>
       <div className='d-flex justify-content-start'>
-      <DataEntry phiData={phiData} phiSizes={phiSizes} setPhiData={setPhiData} calculationsData={calculationsData} setCalculationsData={setCalculationsData} dataSubmit={dataSubmit} resetData={resetData}/>
-      <Report calculationsData={calculationsData}/>
+        <DataEntry phiData={phiData} phiSizes={phiSizes} setPhiData={setPhiData} calculationsData={calculationsData} setCalculationsData={setCalculationsData} dataSubmit={dataSubmit} resetData={resetData}/>
+        <Report calculationsData={calculationsData}/>
       </div>
     </div>
   )

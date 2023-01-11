@@ -134,12 +134,13 @@ const DistributionGraphs = ({calculationsData}) => {
   
 
   return (
-    <div>
+    <div >
         <Bar
           className='border'
           data={barData}
           height={250}
           options={barDataOptions}
+          style={{ maxHeight: '345px'}}
           />
           <br/>
         <Line
@@ -147,6 +148,7 @@ const DistributionGraphs = ({calculationsData}) => {
           data={lineData}
           height={250}
           options={lineDataOptions}
+          style={{ maxHeight: '345px'}}
         />
     </div>
   )
