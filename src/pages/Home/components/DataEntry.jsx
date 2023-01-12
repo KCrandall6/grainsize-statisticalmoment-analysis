@@ -4,6 +4,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
+import InfoModal from './InfoModal';
+
 const DataEntry = ({phiData, phiSizes, setPhiData, dataSubmit, resetData, calculationsData, setCalculationsData}) => {
 
 
@@ -31,7 +33,8 @@ const DataEntry = ({phiData, phiSizes, setPhiData, dataSubmit, resetData, calcul
           <Form.Label>Sample Name</Form.Label>
           <Form.Control name="sampleName" onChange={onFormChange} type="email" placeholder="Sample Name" />
         </Form.Group>
-      <p>Enter Weight by Seive Size (ϕ)</p>
+      <p>Enter Weight by Seive Size (ϕ)<InfoModal/></p>
+
         {phiSizes.map((size) => (
           <Form.Group key={size} as={Row} className="mb-3" controlId="formHorizontalEmail">
           <Form.Label column sm={2}>
