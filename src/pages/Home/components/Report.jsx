@@ -9,8 +9,6 @@ import jsPDF from 'jspdf';
 import Excel from 'exceljs';
 import FileSaver from 'file-saver';
 
-
-
 const Report = ({calculationsData}) => {
 
 

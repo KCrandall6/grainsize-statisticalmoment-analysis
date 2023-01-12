@@ -2,5 +2,7 @@
   font-size: 0.6rem !important;
   font-weight: bold;
   height: 22px;
-  right: 20px;
+  left: 10px;
+  bottom: 5px;
+  position:relative
 }

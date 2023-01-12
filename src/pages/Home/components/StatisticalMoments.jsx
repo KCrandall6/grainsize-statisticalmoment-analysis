@@ -1,8 +1,16 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 
+import InfoModal from './InfoModal';
+import myImage from '../../../modal-photos/statisticalmoments.jpg'
 
 const StatisticalMoments = ({calculationsData}) => {
+
+  const statisticalMomentsInfo = {
+    "title" : "Statistical Moments",
+    "content" : "In order to calculate the statistical moments, the percentiles must first be calculated. Percentiles can be calculated a few different ways, but one way is based on the cumulative distribution curve (0% - 100%) where the percentile represents the particle diameter(Φ) at said percent. For this example, a simple linear interpolation between points at every phi increment was used to calculate percentiles, giving a good estimation of the where the percentile would land. Once the necessary percentiles are had, the statistical moments can then be calculated following the equations in the figure below. The statistical moments here are calculated following the Folk and Ward (1957) logarithmic graphical measures.",
+    "image" : myImage
+  }
 
   let moments = {
     'mean' : '-',
@@ -120,7 +128,7 @@ const StatisticalMoments = ({calculationsData}) => {
 
   return(
     <div className='text-center'>
-      <h3>Statistical Moments</h3>
+      <h3>Statistical Moments <InfoModal data={statisticalMomentsInfo}/></h3>
       <Table striped bordered hover size="sm">
           <thead>
             <tr>
