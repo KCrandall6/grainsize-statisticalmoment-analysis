@@ -17,8 +17,8 @@ const Report = ({calculationsData}) => {
   const downloadPDF = () => {
     const div = document.querySelector("#div-to-download");
     const pdf = new jsPDF('p', 'in', 'letter');
-    html2canvas(div).then(canvas => {
-        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0);
+    html2canvas(div, {scale: 1}).then(canvas => {
+      pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0);
       pdf.save(`${calculationsData.sampleName}.pdf`);
     });
   };

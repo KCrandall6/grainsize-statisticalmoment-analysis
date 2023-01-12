@@ -6,8 +6,16 @@ import Row from 'react-bootstrap/Row';
 
 import InfoModal from './InfoModal';
 
+import mmtophi from '../../../modal-photos/mmtophi.jpg'
+
 const DataEntry = ({phiData, phiSizes, setPhiData, dataSubmit, resetData, calculationsData, setCalculationsData}) => {
 
+
+  const phiInfoModal = {
+    "title": "Phi Size",
+    "content": "Grain size is often measured in mm, but in analysis, it can be converted to a phi scale where Φ = -log2 × grain size in mm.",
+    "image": mmtophi
+  }
 
   const onFormChange = (e) => {
     let phi = e.target.name;
@@ -27,13 +35,13 @@ const DataEntry = ({phiData, phiSizes, setPhiData, dataSubmit, resetData, calcul
   }
 
   return(
-    <div className='d-flex justify-content-center p-4' >
+    <div className='d-flex justify-content-center p-4 position-relative' >
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Sample Name</Form.Label>
           <Form.Control name="sampleName" onChange={onFormChange} type="email" placeholder="Sample Name" />
         </Form.Group>
-      <p>Enter Weight by Seive Size (ϕ)<InfoModal/></p>
+      <p>Enter Weight by Seive Size (ϕ)<InfoModal data={phiInfoModal}/></p>
 
         {phiSizes.map((size) => (
           <Form.Group key={size} as={Row} className="mb-3" controlId="formHorizontalEmail">
