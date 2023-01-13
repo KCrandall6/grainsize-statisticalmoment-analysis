@@ -1,6 +1,6 @@
 # Gransize Statistical Moment Analysis
 
-The purpose of this app is to calculate and model the statistical moments and distribution for grain size analysis.
+The purpose of this app is to calculate and model the statistical moments and distribution for grain size analysis. It allows the input of measured weights in seive size (see attached image for conversion from mm to phi size on the info icon) and calculates and graphs weight %, cumulative %, as well as calculates the four statistical moments (mean, sorting, skewness, and kurtosis) along with their descriptors after the Folk and Ward (1957) method. The data then can be downloaded as a PDF report or downloaded to an xml file for Excel.
 
 Check out the deployed app here or pull down and run on your own.
 
