@@ -1,0 +1,32 @@
+.equation {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 120%;
+  padding: 5px;
+}
+
+.fraction {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.fraction::before {
+  content: "";
+  border-top: 1px solid black;
+  width: 100%;
+  margin: 0.2em 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+.fraction .numerator {
+  display: block;
+  text-align: center;
+}
+
+.fraction .denominator {
+  display: block;
+  text-align: center;
+}
