@@ -4,6 +4,8 @@ The purpose of this app is to calculate and model the statistical moments and di
 
 Check out the deployed app here or pull down and run on your own.
 
+![App screen shot](https://github.com/KCrandall6/grainsize-statisticalmoment-analysis/blob/main/src/modal-photos/appscreenshot.jpg)
+
 For geologists: This is an app to help calculate the statistical moments following the Folk and Ward (1957) methods and calculations described within the About section and seen in the figure below. If assistance is needed, feel free to create an issue.
 
 ![Picture](https://github.com/KCrandall6/grainsize-statisticalmoment-analysis/blob/main/src/modal-photos/statisticalmoments.jpg)
