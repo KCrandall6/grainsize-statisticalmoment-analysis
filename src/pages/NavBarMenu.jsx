@@ -13,6 +13,7 @@ const NavBarMenu = () => {
           <Navbar.Brand href="/">Grainsize Statistical Moment Analysis</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/search">Search</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
           </Nav>
         </Container>
